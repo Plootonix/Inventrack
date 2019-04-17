@@ -1,0 +1,52 @@
+package sortalg;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+
+/**
+ *
+ * @author Ryan-PC
+ */
+public class SortAlg {
+    /**
+     * @param args the command line arguments
+     */
+    ArrayList<HashMap> qResult = new ArrayList<>();
+    public static void main(String[] args) {
+        // TODO code application logic here
+        ArrayList<HashMap> tableList = new ArrayList<>();
+        //SQLQuerier querier = new SQLQuerier("24.127.67.134", 55556);
+        //qResult = querier.query("SELECT", "*", "film", "9");
+        for (int i = 0; i < 8; i++) {
+            //toString(qResult.get(i).get("rental_rate"));
+
+
+            
+        }
+            
+        
+        
+    }
+    
+    public void sortByID() {
+        Collections.sort(qResult, new Comparator<HashMap>() {
+            @Override
+            public int compare(HashMap o1, HashMap o2) {
+                return o1.get("film_id") - o2.get("film_id");
+                
+            }
+        });
+    }
+    
+    public void sortByRating() {
+        Collections.sort(qResult, new Comparator<HashMap>() {
+            @Override
+            public int compare(HashMap o1, HashMap o2) {
+                return o1.get("rating") - o2.get("rating");
+                
+            }
+        });
+    }
+}
