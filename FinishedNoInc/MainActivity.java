@@ -102,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             System.out.println("error");
         }
+        
+        Collections.sort(qResult, new Comparator<HashMap>() {
+            @Override
+            public int compare(HashMap o1, HashMap o2) {
+                return Integer.parseInt((String) o1.get("title")) - 
+                        Integer.parseInt((String) o2.get("title"));
+            }
+        });
 
         for(int i = 0; i< 8; i++ ){
             title[i].setText(((values.get(i).get("title"))).toString());
